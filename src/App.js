@@ -2,8 +2,8 @@ import './App.css';
 import AddItems from './components/additem'
 
 
-import React, {useState} from 'react';
-import DisplayTransaction from './components/dispalyTransaction';
+import React, {useState} from 'react'
+import DisplayTransaction from './components/DisplayTransactions'
 function App() {
 
   const [transaction, setTransaction] = useState([]);
