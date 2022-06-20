@@ -1,13 +1,15 @@
+/* Main styling for app.js and applies globally */
+
 *{
   margin: 0;
   padding: 0;
 }
-
+/* Main styling for body and applies globally */
 body{
   background-color: #f7f7f7;
   font-family: 'lato';
 }
-
+/* Main styling for container and applies globally */
 .Container{
   display: flex;
   flex-direction: column;
