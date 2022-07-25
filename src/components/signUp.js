@@ -1,5 +1,9 @@
-import {useHistory} from 'react-router-dom'
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+
+
 
 function SignUp(){
     const btn = {
@@ -8,10 +12,16 @@ function SignUp(){
         marginTop: '3%'
     };
 
+    const [email,setemail] = useState('');
+    const [password, setpassword] = useState('');
+
     let history = useHistory();
-    const signUp =(()=>{
+    const Register =(()=>{
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password).then(()=>{}).catch(()=>{})
         history.push('/home')
     });
+   
 
 
     return(
@@ -19,7 +29,7 @@ function SignUp(){
             <h1>Register</h1>
             <input type="email" placeholder="email"/><br></br>
             <input type="password" placeholder="password"/><br></br>
-            <button style={btn} onClick={signUp}>Register</button>
+            <button style={btn} onClick={Register}>Register</button>
         </div>
     )
 }
