@@ -18,8 +18,10 @@ function SignUp(){
     let history = useHistory();
     const Register =(()=>{
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password).then(()=>{}).catch(()=>{})
-        history.push('/home')
+        createUserWithEmailAndPassword(auth, email, password).then(()=>{
+            history.push('/home');
+        }).catch(()=>{})
+        
     });
    
 
