@@ -21,9 +21,12 @@ function Login(){
             <input type="email" placeholder="email"/><br></br>
             <input type="password" placeholder="password"/><br></br>
             <button style={btn} onClick={login}>Login</button><br></br>
-            <span>Don't have an account</span><br></br>
             <span>
-                <Link to="/sign-up">Create account here</Link></span>
+                Don't have an account
+            </span><br></br>
+            <span>
+                <Link to="/sign-up">Create account here</Link>
+            </span>
 
         </div>
     )
