@@ -5,6 +5,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 
+
 function SignUp(){
     const btn = {
         width: '150px',
@@ -20,7 +21,9 @@ function SignUp(){
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password).then(()=>{
             history.push('/home');
-        }).catch(()=>{})
+        }).catch((error)=>{
+            console.log(error);
+        })
         
     });
    
@@ -29,8 +32,8 @@ function SignUp(){
     return(
         <div className="container">
             <h1>Register</h1>
-            <input type="email" placeholder="email"/><br></br>
-            <input type="password" placeholder="password"/><br></br>
+            <input type="email" placeholder="email" onChange={(e)=>setemail(e.target.value)}/><br></br>
+            <input type="password" placeholder="password" onChange={(e)=>setpassword(e.target.value)}/><br></br>
             <button style={btn} onClick={Register}>Register</button>
         </div>
     )
