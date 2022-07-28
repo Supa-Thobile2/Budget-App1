@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../firebaseConfig/firebaseConfig";
+
 
 
 
@@ -18,7 +20,7 @@ function SignUp(){
 
     let history = useHistory();
     const Register =(()=>{
-        const auth = getAuth();
+       
         createUserWithEmailAndPassword(auth, email, password).then(()=>{
             history.push('/home');
         }).catch((error)=>{
